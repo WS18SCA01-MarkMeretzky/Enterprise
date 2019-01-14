@@ -43,7 +43,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         //Create the Starship Enterprise (7 pieces).
         
         let enterprise: SCNNode = SCNNode();
-        enterprise.position = SCNVector3(0.0, 0.0, 0.0);
+        enterprise.position = SCNVector3(0.0, 0.0, 0.0); //Unnecessary, it's the default.
         enterprise.scale = SCNVector3(0.0005, 0.0005, 0.0005);
 
         //Port and starboard propulsion units.
@@ -57,7 +57,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             fatalError("propulsionUnitGeometry.firstMaterial == nil");
         }
         
-        for i in stride(from: -1, through: 1, by: 2) { //-1 is starboard, 1 is port
+        for i in stride(from: -1, through: 1, by: 2) { //1 is starboard, -1 is port
             let propulsionUnit: SCNNode = SCNNode();
             propulsionUnit.geometry = propulsionUnitGeometry;
             propulsionUnit.position = SCNVector3(i * 304 / 2, 304 / 2, -504 / 2);
@@ -76,7 +76,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             fatalError("propulsionUnitGeometry.firstMaterial == nil");
         }
         
-        for i in stride(from: -1, through: 1, by: 2) { //-1 is starboard, 1 is port
+        for i in stride(from: -1, through: 1, by: 2) { //1 is starboard, -1 is port
             let strut: SCNNode = SCNNode();
             strut.geometry = strutGeometry;
             strut.position = SCNVector3(i * 304 / 4, 304 / 4, -370);
